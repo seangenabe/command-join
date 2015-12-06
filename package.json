@@ -1,6 +1,6 @@
 {
   "name": "command-join",
-  "version": "1.0.0-2",
+  "version": "1.0.0",
   "description": "Escape and join command-line arguments. Cross-platform.",
   "main": "command-join.js",
   "scripts": {
