@@ -17,11 +17,11 @@ describe('nix tests', function() {
   })
 
   it('should exec normally', function() {
-    expect(exec(commands1)).to.equal(commands1.join('@'))
+    expect(exec(commands1)).to.equal(commands1.join('\n'))
   })
 
   it('should exec string with single quotes', function() {
-    expect(exec(commands2)).to.equal(commands2.join('@'))
+    expect(exec(commands2)).to.equal(commands2.join('\n'))
   })
 
 })
