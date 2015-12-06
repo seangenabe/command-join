@@ -9,7 +9,8 @@ describe('nix tests', function() {
   if (process.platform === 'win32') { return }
 
   const commands1 = ['a', 'b', 'c', 'd.txt']
-  const commands2 = ["'a", "b'c", "d'"]
+  const commands2 = ["'a", "b'c", "d\\e", "f\\\\''g", "h i", "' j '", "k?", 
+    "l[", "m]", "`n`", "$o", "$(p)", "#q", "r'"]
 
   it('should join normally', function() {
     expect(join(commands1)).to.equal('a b c d.txt')
@@ -19,12 +20,8 @@ describe('nix tests', function() {
     expect(exec(commands1)).to.equal(commands1.join('#'))
   })
 
-  it('should escape single quotes', function() {
-    expect(join(commands)).to.equal("\'a b'\''c d'\'")
-  })
-
   it('should exec string with single quotes', function() {
-    expect(exec(commands)).to.equal(commands2.join('#'))
+    expect(exec(commands2)).to.equal(commands2.join('#'))
   })
 
 })
