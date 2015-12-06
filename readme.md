@@ -3,7 +3,8 @@
 Escape command-line arguments, cross-platform.
 
 [![npm](https://img.shields.io/npm/v/command-join.svg?style=flat-square)](https://www.npmjs.com/package/command-join)
-[![Build Status](https://img.shields.io/travis/seangenabe/command-join/master.svg?style=flat-square)](https://travis-ci.org/seangenabe/command-join)
+[![Travis Build Status](https://img.shields.io/travis/seangenabe/command-join/master.svg?label=travis&style=flat-square)](https://travis-ci.org/seangenabe/command-join)
+[![AppVeyor Build Status](https://img.shields.io/appveyor/ci/seangenabe/command-join.svg?label=appveyor&style=flat-square)](https://ci.appveyor.com/project/seangenabe/command-join)
 [![devDependency Status](https://img.shields.io/david/dev/seangenabe/command-join.svg?style=flat-square)](https://david-dm.org/seangenabe/command-join#info=devDependencies)
 [![node](https://img.shields.io/node/v/command-join.svg?style=flat-square)](https://nodejs.org/en/download/)
 
