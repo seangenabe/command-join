@@ -1,7 +1,7 @@
 {
   "name": "command-join",
   "version": "1.0.0",
-  "description": "Escape and join command-line arguments. Cross-platform.",
+  "description": "Escape and join command-line arguments, cross-platform.",
   "main": "command-join.js",
   "scripts": {
     "test": "mocha test/*.test.js"

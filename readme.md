@@ -20,10 +20,16 @@ Escapes each command-line argument and joins them into a string that can then be
 
 If a string is passed, an array containing the string will instead be processed.
 
+**Example**
+
 ```javascript
-let x = commandJoin(['a', "b\\", "'c"])
-x // Windows: a b\ c'   *nix: a b\ '\''c
+let command = commandJoin(['a', "b\\", "'c"])
+command
+// output on Windows: a "b\\" 'c
+// output on Linux: a 'b\' \'c
 ```
+
+See the tests for more convoluted examples.
 
 ## License
 
