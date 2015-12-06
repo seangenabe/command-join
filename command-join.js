@@ -1,6 +1,6 @@
 'use strict'
 
-const NEEDS_QUOTE = /[\s\\*\?\[\]`$()#]/
+const NEEDS_QUOTE = /[\s\\*\?\[\]`$()#<>|&;]/
 
 function joinNix(arr) {
   let out = []
@@ -46,7 +46,7 @@ function joinWin(arr) {
   let out = []
 
   for (let command of arr) {
-    if (!/[\s\\"]/.test(command)) {
+    if (!/[\s\\"<>|&]/.test(command)) {
       out.push(command)
       continue
     }
@@ -81,7 +81,10 @@ function joinWin(arr) {
     flushBackslashes(2)
     // end escape quote
     outString.push("\"")
-    out.push(outString.join(''))
+    let escapedCommand = outString.join('')
+    // escape some special characters
+    escapedCommand = escapedCommand.replace(/[&|<>;%^]/g, match => `^${match}`)
+    out.push(escapedCommand)
   }
 
   return out.join(' ')
