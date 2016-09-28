@@ -7,6 +7,8 @@ const repeat = require("repeat-string")
 function joinNix(arr) {
   let out
   out = arr.map(command => {
+    // convert to string
+    command = String(command)
     // whether we need a quote for the current block
     let needsQuote = false
     // collection of quoted strings and escaped single quotes
