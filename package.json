@@ -8,7 +8,8 @@
   ],
   "scripts": {
     "build": "babel command-join.js --out-dir dist && babel test --out-dir test-es5",
-    "test": "npm run build && mocha test-es5/*.test.js"
+    "test": "npm run build && mocha test-es5/*.test.js",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
