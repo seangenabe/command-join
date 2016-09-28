@@ -36,7 +36,7 @@
     "babel-plugin-transform-es2015-constants": "^6.1.4",
     "babel-plugin-transform-es2015-template-literals": "^6.8.0",
     "chai": "^3.4.1",
-    "mocha": "^2.3.4"
+    "mocha": "^3.1.0"
   },
   "engines": {
     "node": ">=0.10"
