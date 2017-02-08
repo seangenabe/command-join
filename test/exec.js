@@ -1,12 +1,12 @@
 'use strict'
 
-const join = require('../')
+const join = require('..')
 const ChildProcess = require('child_process')
 
 if (require.main === module) {
   console.log(process.argv.slice(2).join('\n'))
 }
-else if (typeof ChildProcess.execSync === 'function') {
+else {
   module.exports = function exec(args) {
     args = args.slice()
     args.unshift(__filename)

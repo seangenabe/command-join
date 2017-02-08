@@ -1,6 +1,6 @@
 'use strict'
 
-const join = require('../')
+const join = require('..')
 const expect = require('chai').expect
 const exec = require('./exec')
 
@@ -16,14 +16,12 @@ describe('nix tests', function() {
     expect(join(commands1)).to.equal('a b c d.txt')
   })
 
-  if (typeof exec === 'function') {
-    it('should exec normally', function() {
-        expect(exec(commands1)).to.equal(commands1.join('\n'))
-    })
+  it('should exec normally', function() {
+    expect(exec(commands1)).to.equal(commands1.join('\n'))
+  })
 
-    it('should exec string with single quotes', function() {
-        expect(exec(commands2)).to.equal(commands2.join('\n'))
-    })
-  }
+  it('should exec string with single quotes', function() {
+    expect(exec(commands2)).to.equal(commands2.join('\n'))
+  })
 
 })

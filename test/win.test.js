@@ -1,6 +1,6 @@
 'use strict'
 
-const join = require('../')
+const join = require('..')
 const expect = require('chai').expect
 const exec = require('./exec')
 
@@ -16,14 +16,12 @@ describe('win32 tests', function() {
     expect(join(commands1)).to.equal("a b.txt c/d 'e'")
   })
 
-  if (typeof exec === 'function') {
-    it('should exec normally', function() {
-        expect(exec(commands1)).to.equal(commands1.join('\n'))
-    })
+  it('should exec normally', function() {
+    expect(exec(commands1)).to.equal(commands1.join('\n'))
+  })
 
-    it('should exec to escape special characters', function() {
-        expect(exec(commands2)).to.equal(commands2.join('\n'))
-    })
-  }
+  it('should exec to escape special characters', function() {
+    expect(exec(commands2)).to.equal(commands2.join('\n'))
+  })
 
 })

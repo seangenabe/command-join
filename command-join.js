@@ -1,14 +1,10 @@
 'use strict'
 
 const NEEDS_QUOTE = /[\s\\*\?\[\]`$()#<>|&;]/
-const arrayFrom = require("array-from")
-const repeat = require("repeat-string")
 
 function joinNix(arr) {
-  let out
-  out = arr.map(command => {
-    // convert to string
-    command = String(command)
+  let out = []
+  for (let command of arr) {
     // whether we need a quote for the current block
     let needsQuote = false
     // collection of quoted strings and escaped single quotes
@@ -25,43 +21,44 @@ function joinNix(arr) {
       blocks.push(currentBlock.join(''))
       currentBlock = []
     }
-    command.split('').forEach(char => {
+    for (let char of command) {
       if (char === "'") { // if single quote
         // flush the current block
         flushCurrentBlock()
         // escape a single quote
         blocks.push("\\'")
-        return
+        continue
       }
       if (NEEDS_QUOTE.test(char)) {
         needsQuote = true
       }
       currentBlock.push(char)
-    })
+    }
     // flush last block
     flushCurrentBlock()
     let escapedCommand = blocks.join('')
-    return escapedCommand
-  })
+    out.push(escapedCommand)
+  }
   return out.join(' ')
 }
 
 function joinWin(arr) {
-  let out
+  let out = []
 
-  out = arr.map(command => {
+  for (let command of arr) {
     if (!/[\s\\"<>|&]/.test(command)) {
-      return command
+      out.push(command)
+      continue
     }
     let backslashes = 0
     let c
     // start escape quote
     let outString = ["\""]
     let flushBackslashes = (n) => {
-      outString.push(repeat("\\", n * backslashes))
+      outString.push("\\".repeat(n * backslashes))
       backslashes = 0
     }
-    command.split('').forEach(char => {
+    for (let char of command) {
       // if char is a backslash
       if (char === "\\") {
         // enqueue backslash
@@ -79,7 +76,7 @@ function joinWin(arr) {
         flushBackslashes(1)
         outString.push(char)
       }
-    })
+    }
     // flush any remaining backslashes
     flushBackslashes(2)
     // end escape quote
@@ -87,8 +84,8 @@ function joinWin(arr) {
     let escapedCommand = outString.join('')
     // escape some special characters
     escapedCommand = escapedCommand.replace(/[&|<>;%^]/g, match => `^${match}`)
-    return escapedCommand
-  })
+    out.push(escapedCommand)
+  }
 
   return out.join(' ')
 }
@@ -97,7 +94,7 @@ function commandJoin(arg) {
   if (typeof arg === 'string') {
     arg = [arg]
   }
-  arg = arrayFrom(arg)
+  arg = Array.from(arg)
   if (process.platform === 'win32') {
     return joinWin(arg)
   }

@@ -2,14 +2,9 @@
   "name": "command-join",
   "version": "1.1.1",
   "description": "Escape and join command-line arguments, cross-platform.",
-  "main": "dist/command-join.js",
-  "files": [
-    "dist"
-  ],
+  "main": "command-join.js",
   "scripts": {
-    "build": "babel command-join.js --out-dir dist && babel test --out-dir test-es5",
-    "test": "npm run build && mocha test-es5/*.test.js",
-    "prepublish": "npm run build"
+    "test": "mocha test/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -30,20 +25,10 @@
   },
   "homepage": "https://github.com/seangenabe/command-join#readme",
   "devDependencies": {
-    "babel-cli": "^6.14.0",
-    "babel-core": "^6.14.0",
-    "babel-plugin-transform-es2015-arrow-functions": "^6.8.0",
-    "babel-plugin-transform-es2015-block-scoping": "^6.15.0",
-    "babel-plugin-transform-es2015-constants": "^6.1.4",
-    "babel-plugin-transform-es2015-template-literals": "^6.8.0",
     "chai": "^3.4.1",
     "mocha": "^3.1.0"
   },
   "engines": {
-    "node": ">=0.10"
-  },
-  "dependencies": {
-    "array-from": "^2.1.1",
-    "repeat-string": "^1.5.4"
+    "node": ">=4.0.0"
   }
 }
