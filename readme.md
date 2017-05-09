@@ -1,5 +1,7 @@
 # command-join
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/seangenabe/command-join.svg)](https://greenkeeper.io/)
+
 Escape command-line arguments, cross-platform.
 
 [![npm](https://img.shields.io/npm/v/command-join.svg?style=flat-square)](https://www.npmjs.com/package/command-join)
