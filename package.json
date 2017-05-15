@@ -4,7 +4,7 @@
   "description": "Escape and join command-line arguments, cross-platform.",
   "main": "command-join.js",
   "scripts": {
-    "test": "mocha test/*.test.js"
+    "test": "ava"
   },
   "repository": {
     "type": "git",
@@ -24,11 +24,13 @@
     "url": "https://github.com/seangenabe/command-join/issues"
   },
   "homepage": "https://github.com/seangenabe/command-join#readme",
-  "devDependencies": {
-    "chai": "^3.4.1",
-    "mocha": "^3.1.0"
-  },
   "engines": {
     "node": ">=4.0.0"
+  },
+  "ava": {
+    "files": "test/*.test.js"
+  },
+  "devDependencies": {
+    "ava": "^0.19.1"
   }
 }
