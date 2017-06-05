@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/seangenabe/command-join#readme",
   "devDependencies": {
-    "chai": "^3.4.1",
+    "chai": "^4.0.2",
     "mocha": "^3.1.0"
   },
   "engines": {
