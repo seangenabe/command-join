@@ -5,6 +5,11 @@ const NEEDS_QUOTE = /[\s\\*\?\[\]`$()#<>|&;]/
 function joinNix(arr) {
   let out = []
   for (let command of arr) {
+    // if it is an empty string then skip the logic
+    if (command.length === 0) {
+      out.push("''")
+      continue
+    }
     // whether we need a quote for the current block
     let needsQuote = false
     // collection of quoted strings and escaped single quotes
@@ -46,6 +51,11 @@ function joinWin(arr) {
   let out = []
 
   for (let command of arr) {
+    // if it is an empty string then skip the logic
+    if (command.length === 0) {
+      out.push('""')
+      continue
+    }
     if (!/[\s\\"<>|&]/.test(command)) {
       out.push(command)
       continue
