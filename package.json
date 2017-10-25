@@ -24,13 +24,13 @@
     "url": "https://github.com/seangenabe/command-join/issues"
   },
   "homepage": "https://github.com/seangenabe/command-join#readme",
+  "devDependencies": {
+    "ava": "^0.19.1"
+  },
   "engines": {
     "node": ">=4.0.0"
   },
   "ava": {
     "files": "test/*.test.js"
-  },
-  "devDependencies": {
-    "ava": "^0.19.1"
   }
 }
