@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/seangenabe/command-join#readme",
   "devDependencies": {
-    "ava": "^0.19.1"
+    "ava": "^0.24.0"
   },
   "engines": {
     "node": ">=4.0.0"
