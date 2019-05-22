@@ -1,0 +1,10 @@
+.vscode/**
+**/*.ts
+!**/*.d.ts
+*.tgz
+*.tsbuildinfo
+.prettierrc.yml
+tsconfig.json
+test/**
+.travis.yml
+appveyor.yml

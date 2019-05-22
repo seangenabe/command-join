@@ -1,3 +1,8 @@
 node_modules/
-*.log
-*.log.*
+**/*.js
+**/*.js.map
+**/*.d.ts
+**/*.d.ts.map
+*.tgz
+*.tsbuildinfo
+npm-debug.log
