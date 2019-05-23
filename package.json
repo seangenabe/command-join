@@ -23,6 +23,7 @@
   "main": "command-join.js",
   "scripts": {
     "build": "tsc",
+    "postinstall": "npx -p @seangenabe/tnx tnx || exit 0",
     "prepublishOnly": "npm test",
     "pretest": "npm run build",
     "test": "node test/index.test.js",
