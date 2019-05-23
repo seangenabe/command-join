@@ -11,11 +11,11 @@ If you like this package, be sure to star its repo, and please consider [donatin
 
 ## Usage
 
-```javascript
-const commandJoin = require('command-join')
+```typescript
+import { commandJoin } from "command-join"
 ```
 
-### `commandJoin(arg: Array|String): String`
+### `commandJoin(arg: string | string[]): string`
 
 Escapes each command-line argument and joins them into a string that can then be executed, e.g. via `child_process.exec`.
 
@@ -24,10 +24,18 @@ If a string is passed, an array containing the string will instead be processed.
 **Example**
 
 ```javascript
-let command = commandJoin(['a', "b\\", "'c"])
+const command = commandJoin(['a', "b\\", "'c"])
 command
 // output on Windows: a "b\\" 'c
 // output on Linux: a 'b\' \'c
 ```
 
 See the tests for more convoluted examples.
+
+## Migrating
+
+**Migrating to v3**:
+```diff
+- const commandJoin = require("command-join")
++ const { commandJoin } = require("command-join")
+```

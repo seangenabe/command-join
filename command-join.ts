@@ -1,6 +1,6 @@
 const NEEDS_QUOTE = /[\s\\*\?\[\]`$()#<>|&;]/
 
-function joinNix(arr: readonly string[]) {
+export function joinNix(arr: readonly string[]) {
   const out: string[] = []
   for (const command of arr) {
     // if it is an empty string then append an empty string indicator
@@ -46,7 +46,7 @@ function joinNix(arr: readonly string[]) {
   return out.join(' ')
 }
 
-function joinWin(arr: readonly string[]) {
+export function joinWin(arr: readonly string[]) {
   const out: string[] = []
 
   for (const command of arr) {
@@ -99,7 +99,7 @@ function joinWin(arr: readonly string[]) {
   return out.join(' ')
 }
 
-function commandJoin(arg: string | readonly string[]): string {
+export function commandJoin(arg: string | readonly string[]): string {
   if (typeof arg === 'string') {
     arg = [arg] as readonly string[]
   }
@@ -111,5 +111,3 @@ function commandJoin(arg: string | readonly string[]): string {
     return joinNix(arg)
   }
 }
-
-export = commandJoin
