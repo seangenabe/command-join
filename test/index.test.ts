@@ -3,6 +3,12 @@ import {exec} from './exec'
 import { test, run } from "t0"
 import { equal } from "@improved/node/assert"
 
+const withBlank = ['a', '', 'b']
+
+test('should accept blank args', () => {
+  equal(exec(withBlank), withBlank.join('\n'))
+})
+
 if (process.platform === 'win32') {
 
   const commands1 = ['a', 'b.txt', 'c/d', "'e'"]
