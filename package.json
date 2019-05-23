@@ -1,6 +1,6 @@
 {
   "name": "command-join",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Escape and join command-line arguments, cross-platform.",
   "keywords": [
     "argv",
