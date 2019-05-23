@@ -31,7 +31,3 @@ command
 ```
 
 See the tests for more convoluted examples.
-
-## License
-
-MIT
