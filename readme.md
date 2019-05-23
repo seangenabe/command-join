@@ -7,6 +7,8 @@ Escape command-line arguments, cross-platform.
 [![devDependency Status](https://img.shields.io/david/dev/seangenabe/command-join.svg?style=flat-square)](https://david-dm.org/seangenabe/command-join#info=devDependencies)
 [![node](https://img.shields.io/node/v/command-join.svg?style=flat-square)](https://nodejs.org/en/download/)
 
+If you like this package, be sure to star its repo, and please consider [donating](https://seangenabe.netlify.com/donate).
+
 ## Usage
 
 ```javascript
